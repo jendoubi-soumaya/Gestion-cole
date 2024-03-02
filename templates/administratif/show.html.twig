@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administratif{% endblock %}
+
+{% block body %}
+    <h1>Administratif</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ administratif.id }}</td>
+            </tr>
+            <tr>
+                <th>Cin</th>
+                <td>{{ administratif.cin }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ administratif.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ administratif.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ administratif.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_administratif_index') }}">back to list</a>
+
+    <a href="{{ path('app_administratif_edit', {'id': administratif.id}) }}">edit</a>
+
+    {{ include('administratif/_delete_form.html.twig') }}
+{% endblock %}

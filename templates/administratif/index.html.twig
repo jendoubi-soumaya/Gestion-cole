@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administratif index{% endblock %}
+
+{% block body %}
+    <h1>Administratif index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Cin</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Email</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for administratif in administratifs %}
+            <tr>
+                <td>{{ administratif.id }}</td>
+                <td>{{ administratif.cin }}</td>
+                <td>{{ administratif.nom }}</td>
+                <td>{{ administratif.prenom }}</td>
+                <td>{{ administratif.email }}</td>
+                <td>
+                    <a href="{{ path('app_administratif_show', {'id': administratif.id}) }}">show</a>
+                    <a href="{{ path('app_administratif_edit', {'id': administratif.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_administratif_new') }}">Create new</a>
+{% endblock %}

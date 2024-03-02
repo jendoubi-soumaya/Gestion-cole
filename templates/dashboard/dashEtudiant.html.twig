@@ -1,0 +1,279 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>AdminSite</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="../../public/assest/css/dash.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+<section id="sidebar">
+    <a href="#" class="brand"> Admin</a>
+    <ul class="side-menu">
+        <li><a href="dash.php" ><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
+
+        <li>
+            <a href="dashprod.html" ></i> Enseignants </a>
+        </li>
+
+        <li>
+            <a href="dashEtudiant.html" class="active"></i> Etudiants </a>
+
+        </li>
+
+        <li>
+            <a href="dashcat.html" ></i> Filière </a>
+
+        </li>
+        <li><a  href="commande.html" > Semestre</a></li>
+
+        <li><a href="dashModule.html"></i> Modules</a></li>
+        <li><a href="dashMatiere.html"></i> Matiére</a></li>
+
+
+
+    </ul>
+
+</section>
+<!-- SIDEBAR -->
+
+<!-- NAVBAR -->
+<section id="content">
+    <!-- NAVBAR -->
+    <nav>
+        <i class='bx bx-menu toggle-sidebar' ></i>
+        <form action="#">
+
+        </form>
+
+        <span class="divider"></span>
+        <div class="profile">
+            <img src="image/soumaya.jpg" alt="">
+            <ul class="profile-link">
+                <li><a href="#"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
+                <li><a href="#"><i class='bx bxs-cog' ></i> Paramètres </a></li>
+                <li><a href="deconnexion.php"><i class='bx bxs-log-out-circle' ></i> Déconnexion</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- NAVBAR -->
+    <main>
+
+        <table id="example" class="table table-striped" style="width:100%">
+            <center>
+                <h3>Liste des Etudiant</h3>
+
+
+
+            </center>
+
+
+
+
+            <a href="ajoutercategorie.php"  class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">ajouter</a>
+            <thead>
+            <tr>
+                <th>#ID</th>
+                <th>NOM</th>
+                <th>Prénom</th>
+                <th>Date de naissance</th>
+                <th>Filière</th>
+                <th>Niveau</th>
+                <th>Photo</th>
+
+
+            </tr>
+            </thead>
+            <tbody>
+
+
+
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <a href="modifcat.php"  data-toggle="modal" data-target="#modifmodel'.$s['id'].'" class="btn btn-success">modifier</a>
+                    <a href="souscat.php?ids='.$s['id'].'" class="btn btn-danger">supprimer</a>
+                </td>
+
+            </tr>
+
+
+            </tbody>
+            <tfoot>
+            <tr>
+                <th>#ID</th>
+                <th>NOM</th>
+                <th>Prénom</th>
+                <th>Date de naissance</th>
+                <th>Filière</th>
+                <th>Niveau</th>
+                <th>Photo</th>
+
+            </tr>
+            </tfoot>
+        </table>
+
+    </main>
+</section>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ajouter Etudiant</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="ajoutersous.php" method="post" enctype="multipart/form-data">
+
+
+
+                    <div class="form-group">
+                        <input required  type="text" placeholder="nom de l'étudiant" class="form-control" name="nom">
+
+                    </div><br>
+                    <div class="form-group">
+                        <input required  type="text" placeholder="Prénomnom de l'étudiant" class="form-control" name="nom">
+
+                    </div><br>
+                    <div class="form-group">
+                        <input required type="date" placeholder="date de naissance de l'étudiant" class="form-control" name="date de naissance">
+                    </div> <br>
+
+                    <label for="exampleFormControlFile1">Niveau</label>
+                    <select name="souscategorie" class="form-control" >
+                        <option value="">Niveau-1</option>
+                        <option value="">Niveau-2</option>
+                        <option value="">Niveau-3</option>
+
+
+
+                    </select><br>
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">filière</label>
+                        <select name="souscategorie" class="form-control" >
+                            <option value="">filière-aa</option>
+                            <option value="">filière-bb</option>
+                            <option value="">filière-cc</option>
+                            <option value="">filière-dd</option>
+
+
+                        </select>
+                    </div><br>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">ajouter la photo de l'étudiant</label>
+                        <input required name="image" type="file" class="form-control-file" id="exampleFormControlFile1">
+                    </div><br>
+
+
+                    <div class="form-group">
+                    </div>
+
+
+
+            </div>
+            <div class="modal-footer">
+
+                <button  type="submit" class="btn btn-primary">Sauvegarder</button>
+            </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="modal fade" id="modifmodel<?php echo $categorie['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modifier caté</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="modifcat.php" method="post">
+
+                    <input type="hidden" value="<?php echo $categorie['id']; ?>" name="idc"/>
+
+
+
+                    <div class="form-group">
+                        <input value="<?php echo $categorie['nom']; ?>" type="text" placeholder="nom du categorie" class="form-control" name="nom">
+
+                    </div><br>
+                    <div class="form-group">
+                        <input value="<?php echo $categorie['lien']; ?>" type="text" placeholder="lien du categorie" class="form-control" name="lien">
+                    </div> <br>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">changer l'image du categorie</label>
+                        <input name="image" value=" <?php echo $categorie['image']; ?>"
+                               type="file" class="form-control-file" id="exampleFormControlFile1">
+                    </div>
+
+            </div>
+            <div class="modal-footer">
+
+                <button  type="submit" class="btn btn-primary">Sauvegarder</button>
+            </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+<script src="js/dash.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.17/sweetalert2.all.min.js"></script>
+<script src="js/dash.js"></script>
+
+
+
+</script>
+
+
+
+</body>
+É</html> 
+			

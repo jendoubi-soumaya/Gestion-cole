@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Log in!{% endblock %}</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{{ asset("assest/css/Login.css") }}">
+    <!-- ... autres liens et scripts ... -->
+</head>
+<body>
+
+<!-- formulaire  -->
+
+<header class="header">
+    <a href="#" class="logo">Academia  <i class="fas fa-solid fas fa-graduation-cap"></i> Flow</a>
+
+
+    <div class="icons">
+
+        <a href="#" class="fas fa-home" id="login-btn"></a>
+    </div>
+</header>
+
+<section class="formulaire" id="formulaire">
+    <div class="box-container">
+        {% block body %}
+            <form method="post" class="box">
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+
+                {% if app.user %}
+                    <div class="mb-3">
+                        You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+                    </div>
+                {% else %}
+                    <h3>LOGIN</h3>
+                    <input type="email" value="{{ last_username }}" name="email" placeholder="votre adresse mail" class="box" autocomplete="email" required autofocus>
+                    <input type="password" name="password" placeholder="votre mot de passe" class="box" autocomplete="current-password" required>
+                    <p>mot de passe oublié <a href="#">cliquez ici</a></p>
+                    <button type="submit" class="btn">connexion</button>
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                {% endif %}
+            </form>
+        {% endblock %}
+    </div>
+</section>
+
+<section class="footer">
+
+
+
+
+    <div class="credit"> CRÉE PAR <span> Tek-UP </span>  </div>
+
+</section>
+
+</body>
+</html>

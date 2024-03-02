@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emploi du Temps - Enseignant Symfony</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <style>
+        .admin {
+            float: right;
+            margin-top: -170px;
+            margin-right: 50px;
+        }
+
+        .client {
+            margin-left: 50px;
+        }
+    </style>
+</head><br><br>
+<body>
+
+<nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1">Emploi du Temps - Enseignant Symfony</span>
+</nav><br><br><br><br>
+
+<div class="client">
+    <h3>Informations de l'Enseignant</h3>
+    <h6>Nom: Jendoubi</h6>
+    <h6>Prénom: Soumaya</h6>
+    <h6>Département: Informatique</h6>
+</div>
+<div class="admin">
+    <h3>Contact Info</h3>
+    <h6>+21658261170</h6>
+    <h6>jendoubisoumaya922@gmail.com</h6>
+    <h6>Adresse: Charguia, Ariana</h6>
+</div>
+
+<br><br>
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th scope="col">Jour</th>
+        <th scope="col">8h-10h</th>
+        <th scope="col">10h-12h</th>
+        <th scope="col">14h-16h</th>
+        <th scope="col">16h-18h</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">Lundi</th>
+        <td>TIC-1E</td>
+        <td>GLSI-2B</td>
+        <td>Repos</td>
+        <td>GLSI-2C</td>
+    </tr>
+    <tr>
+        <th scope="row">Mardi</th>
+        <td>Repos</td>
+        <td>IOT-3A</td>
+        <td>TIC-1E</td>
+        <td>Repos</td>
+    </tr>
+    <tr>
+        <th scope="row">Mercredi</th>
+        <td>GLSI-2C</td>
+        <td>Repos</td>
+        <td>IOT-3A</td>
+        <td>TIC-1E</td>
+    </tr>
+    <!-- Ajouter plus de lignes pour les autres jours de la semaine si nécessaire -->
+    </tbody>
+</table>
+
+<button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="window.print()">Imprimer</button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

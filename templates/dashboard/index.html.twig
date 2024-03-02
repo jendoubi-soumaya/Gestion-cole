@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ asset("assest/css/dash.css") }}">
+    <title>AdminSite</title>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<section id="sidebar">
+    <a href="#" class="brand"> Admin </a>
+    <ul class="side-menu">
+        <li><a href="http://localhost:8000/dashboard" class ="active"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
+
+        <li>
+            <a href="http://localhost:8000/enseignant/" ></i> Enseignants </a>
+        </li>
+
+        <li>
+            <a href="http://localhost:8000/etudiant/"></i> Etudiants </a>
+
+        </li>
+
+        <li>
+            <a href="http://localhost:8000/filiere/" ></i> Filière </a>
+
+        </li>
+        <li><a  href="http://localhost:8000/matiere/" > Matière</a></li>
+
+        <li><a href="http://localhost:8000/module/"></i> Modules</a></li>
+
+        <li><a href="http://localhost:8000/note/"></i> Note</a></li>
+
+    </ul>
+
+</section>
+<!-- SIDEBAR -->
+
+<!-- NAVBAR -->
+<section id="content">
+    <!-- NAVBAR -->
+    <nav>
+        <i class='bx bx-menu toggle-sidebar' ></i>
+        <form action="#">
+            <div class="form-group">
+                <input type="text" placeholder="Search...">
+                <i class='bx bx-search icon' ></i>
+            </div>
+        </form>
+        <a href="#" class="nav-link">
+            <i class='bx bxs-bell icon' ></i>
+            <span class="badge">5</span>
+        </a>
+        <a href="#" class="nav-link">
+            <i class='bx bxs-message-square-dots icon' ></i>
+            <span class="badge">8</span>
+        </a>
+        <span class="divider"></span>
+        <div class="profile">
+            <img src="{{ asset("assest/image/soumaya.jpg") }}" alt="">
+            <ul class="profile-link">
+                <li><a href="#"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
+                <li><a href="#"><i class='bx bxs-cog' ></i> Paramètres </a></li>
+                <li><a href="/logout"><i class='bx bxs-log-out-circle' ></i> Déconnexion</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- NAVBAR -->
+
+    <!-- MAIN -->
+    <main>
+        <h1 class="title">Dashboard</h1>
+        <ul class="breadcrumbs">
+            <li><a href="#">Home</a></li>
+            <li class="divider">/</li>
+            <li><a href="#" class="active">Dashboard</a></li>
+        </ul>
+        <div class="info-data">
+            <div class="card">
+                <div class="head">
+                    <div>
+                        <h2>1500/2000</h2>
+                        <p>Étudiants Inscrits</p>
+                    </div>
+                    <i class='bx bx-trending-up icon' ></i>
+                </div>
+                <span class="progress" data-value="75%"></span>
+                <span class="label">75%</span>
+            </div>
+            <div class="card">
+                <div class="head">
+                    <div>
+                        <h2>320/400</h2>
+                        <p>Cours Disponibles</p>
+                    </div>
+                    <i class='bx bx-trending-up icon' ></i>
+                </div>
+                <span class="progress" data-value="80%"></span>
+                <span class="label">80%</span>
+            </div>
+            <div class="card">
+                <div class="head">
+                    <div>
+                        <h2>1386</h2>
+                        <p>Taux de Réussite</p>
+                    </div>
+                    <i class='bx bx-trending-up icon' ></i>
+                </div>
+                <span class="progress" data-value="92%"></span>
+                <span class="label">92%</span>
+            </div>
+            <div class="card">
+                <div class="head">
+                    <div>
+                        <h2>75/100</h2>
+                        <p>Professeurs</p>
+                    </div>
+                    <i class='bx bx-trending-up icon' ></i>
+                </div>
+                <span class="progress" data-value="75%"></span>
+                <span class="label">75%</span>
+            </div>
+        </div>
+        <div class="data">
+            <div class="content-data">
+                <div class="head">
+                    <h3>Pourcentage d'admission</h3>
+                    <div class="menu">
+                        <i class='bx bx-dots-horizontal-rounded icon'></i>
+                        <ul class="menu-link">
+                            <li><a href="#">Edit</a></li>
+                            <li><a href="#">Save</a></li>
+                            <li><a href="#">Remove</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chart">
+                    <div id="chart"></div>
+                </div>
+            </div>
+            <div class="content-data">
+                <div class="head">
+                    <h3>Messagerie</h3>
+                    <div class="menu">
+                        <i class='bx bx-dots-horizontal-rounded icon'></i>
+                        <ul class="menu-link">
+                            <li><a href="#">enregistrer</a></li>
+                            <li><a href="#">modifier</a></li>
+                            <li><a href="#">effacer</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chat-box">
+                    <p class="day"><span>Aujourd'hui</span></p>
+                    <div class="msg">
+
+                        <div class="chat">
+                            <div class="profile">
+                                <span class="username">Nour-GLSI-2B</span>
+                                <span class="time">18:30</span>
+                            </div>
+                            <p>Objet : Date du prochain DS ?<br>
+
+                                Bonjour,
+
+                                Pourriez-vous nous informer de la date du prochain DS pour le cours de ML ? Cette information nous aidera à mieux planifier nos révisions.
+
+                                Merci beaucoup !
+
+                                Cordialement,</p>
+                        </div>
+                    </div>
+                    <div class="msg me">
+                        <div class="chat">
+                            <div class="profile">
+                                <span class="time">18:30</span>
+                            </div>
+                            <p>Bonjour Nour,</p>
+                        </div>
+                    </div>
+                    <div class="msg me">
+                        <div class="chat">
+                            <div class="profile">
+                                <span class="time">18:30</span>
+                            </div>
+                            <p>
+                                Merci pour votre message. Nous comprenons l'importance de planifier vos révisions. Le prochain devoir surveillé pour le cours de ML est prévu pour le 15.dec.2023. <br> Vous recevrez bientôt toutes les informations détaillées par courriel.
+
+                                <br>N'hésitez pas à nous contacter pour toute question supplémentaire.<br>
+
+                                Cordialement,<br>
+                                Administration de Tek-Up</p>
+                        </div>
+                    </div>
+
+                </div>
+                <form action="#">
+                    <div class="form-group">
+                        <input type="text" placeholder="Type...">
+                        <button type="submit" class="btn-send"><i class='bx bxs-send' ></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <!-- MAIN -->
+</section>
+<!-- NAVBAR -->
+
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="{{ asset("assest/js/dash.js") }}"></script>
+</body>
+</html>

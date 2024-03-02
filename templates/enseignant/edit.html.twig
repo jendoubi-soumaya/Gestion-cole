@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier le Profil{% endblock %}
+
+{% block body %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+
+    <div class="container rounded bg-white mt-5 mb-5">
+        <div class="row">
+            <div class="col-md-3 border-right">
+                <!-- Contenu de la colonne gauche (peut rester vide ou être rempli selon vos besoins) -->
+            </div>
+
+            <div class="col-md-5 border-right">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="text-right">Modifier Enseignant</h4>
+                    </div>
+
+                    {{ include('enseignant/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+
+                    {{ include('enseignant/_delete_form.html.twig') }}
+                    <a href="{{ path('app_enseignant_index')}}"class="btn btn-success">Retour à la liste</a>
+                    <!-- Bouton pour enregistrer les modifications -->
+
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="p-3 py-5">
+                    <!-- Contenu de la colonne droite (peut rester vide ou être rempli selon vos besoins) -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{% endblock %}
